@@ -8,7 +8,8 @@ We'll learn about the following topics:
     2.) Basic Arithmetic
     3.) Differences between classic division and floor division
     4.) Object Assignment in Python
-    ## Types of numbers
+
+## Types of numbers
 
 Python has various "types" of numbers (numeric literals). We'll mainly focus on integers and floating point numbers.
 
