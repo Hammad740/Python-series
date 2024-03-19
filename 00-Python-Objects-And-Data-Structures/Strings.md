@@ -92,3 +92,47 @@ s[::-1]
 ## String Properties
 
 It's important to note that strings have an important property known as _immutability_. This means that once a string is created, the elements within it can not be changed or replaced. For example:
+
+```python
+s = 'hammad'
+print(s)
+s[0] = 'f'
+print(s)
+s[0] = 'f'
+
+TypeError: 'str' object does not support item assignment
+```
+
+Notice how the error tells us directly what we can't do, change the item assignment!
+
+Something we _can_ do is concatenate strings!
+
+```python
+s='hammad'
+s=s+'ansari'
+```
+
+## Basic Built-in String methods
+
+Objects in Python usually have built-in methods. These methods are functions inside the object (we will learn about these in much more depth later) that can perform actions or commands on the object itself.
+
+We call methods with a period and then the method name. Methods are in the form:
+
+object.method(parameters)
+
+Where parameters are extra arguments we can pass into the method. Don't worry if the details don't make 100% sense right now. Later on we will be creating our own objects and functions!
+
+Here are some examples of built-in methods in strings:
+s.upper()
+s.lower()
+s.spilt()
+
+## Print Formatting
+
+We can use the .format() method to add formatted objects to printed string statements.
+
+The easiest way to show this is through an example:
+
+```python
+'Insert another string with curly brackets: {}'.format('The inserted string')
+```
