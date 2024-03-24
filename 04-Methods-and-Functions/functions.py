@@ -1,3 +1,6 @@
+from random import shuffle
+
+
 def say_hello():
     print('hello')
     print('how are you?')
@@ -109,3 +112,77 @@ print(result)
 name, hours = employee_check()
 print(name)
 print(hours)
+
+
+example = [1, 2, 4, 5, 6, 7, 8]
+result = shuffle(example)  # ? inplace
+
+print(result)
+print(example)
+
+
+def shuffle_list(mylist):
+    shuffle(mylist)
+    return mylist
+
+
+mylist = ['', 'O', '']
+
+print(shuffle_list(mylist))
+
+
+def player_guess():
+    guess = ''
+
+    while guess not in ['0', '1', '2']:
+        guess = input("Pick a number 0,1,or 2")
+    return int(guess)
+
+
+my_index = player_guess()
+print(my_index)
+
+
+def check_guess(mylist, guess):
+    if mylist[guess] == 'O':
+        print("Correct!")
+    else:
+        print("Wrong Guess !")
+        print(mylist)
+
+
+# ? Initial list
+mylist = ["", "O", ""]
+
+# ? shuffle list
+mixedup_list = shuffle_list(mylist)
+
+# ? User Guess
+guess = player_guess()
+
+# ? Check guess
+check_guess(mixedup_list, guess)
+
+
+# /// *args and **kwargs
+
+def myfunc(a, b):
+    return sum((a, b))*0.05
+
+
+print(myfunc(40, 60))
+
+
+def myfunc2(*args):
+    return sum(args)*0.05
+
+
+print(myfunc2(40, 60, 100, 200, 450))
+
+
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(f'{key}:{value}')
+
+
+print(my_function(name='Alice', age=30, city="New York"))
