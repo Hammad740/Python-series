@@ -97,3 +97,76 @@ In this example, `3` and `5` are the arguments passed to the `add()` function.
 - Parameters are placeholders for arguments, while arguments are the actual data that is passed to the function or method for processing.
 - The number of parameters in a function or method definition determines the number of arguments that need to be provided during the function or method call.
 - Parameters determine the structure and behavior of the function or method, while arguments provide the data that the function or method operates on.
+
+In Python, `*args` and `**kwargs` are special syntax used to pass a variable number of arguments to a function. They are often used when you want a function to accept any number of positional and keyword arguments, respectively.
+
+**`*args` (Arbitrary Positional Arguments):**
+
+- The `*args` parameter in a function definition allows the function to accept any number of positional arguments.
+- The name `args` is a convention, but you can use any name preceded by a single asterisk (`*`).
+- Inside the function, `*args` is treated as a tuple containing all the positional arguments passed to the function.
+- You can use `*args` to pass a variable number of arguments to the function without explicitly defining the number of parameters in the function definition.
+
+**Example:**
+
+```python
+def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3, 4, 5)
+# Output:
+# 1
+# 2
+# 3
+# 4
+# 5
+```
+
+**`**kwargs` (Arbitrary Keyword Arguments):\*\*
+
+- The `**kwargs` parameter in a function definition allows the function to accept any number of keyword arguments.
+- The name `kwargs` is a convention, but you can use any name preceded by a double asterisk (`**`).
+- Inside the function, `**kwargs` is treated as a dictionary containing all the keyword arguments passed to the function, where the keys are the argument names and the values are the corresponding values passed to those arguments.
+- You can use `**kwargs` to pass a variable number of keyword arguments to the function without explicitly defining the keyword parameters in the function definition.
+
+**Example:**
+
+```python
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+my_function(name="Alice", age=30, city="New York")
+# Output:
+# name: Alice
+# age: 30
+# city: New York
+```
+
+**Using Both `*args` and `**kwargs`:\*\*
+
+You can use `*args` and `**kwargs` together in the same function definition to accept both positional and keyword arguments:
+
+```python
+def my_function(*args, **kwargs):
+    print("Positional arguments:")
+    for arg in args:
+        print(arg)
+    print("\nKeyword arguments:")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+my_function(1, 2, 3, name="Alice", age=30)
+# Output:
+# Positional arguments:
+# 1
+# 2
+# 3
+#
+# Keyword arguments:
+# name: Alice
+# age: 30
+```
+
+Using `*args` and `**kwargs` provides flexibility in function definitions, allowing you to create functions that can accept various combinations of arguments without explicitly defining all possible parameters.
