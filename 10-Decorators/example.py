@@ -56,3 +56,21 @@ def add(a, b):
 
 
 print(add(34, 56))
+
+
+def smart_div(func):
+    def inner(*args):
+        a = args[0]
+        b = args[1]
+        if a < b:
+            a, b = b, a
+            return func(a, b)
+    return inner
+
+
+@smart_div
+def div(a, b):
+    print(a/b)
+
+
+div(2, 5)
